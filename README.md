@@ -1,4 +1,5 @@
-# oop_151883
+# oop_put_course
 
-Anna Roszkiewicz
+Anna Roszkiewicz 151883
+
 Laboratorium z Programowania Obiektowego
