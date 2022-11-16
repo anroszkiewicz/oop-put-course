@@ -1,4 +1,4 @@
-# oop_put_course
+# oop-put-course
 
 Anna Roszkiewicz 151883
 
