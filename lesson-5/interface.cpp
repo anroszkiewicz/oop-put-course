@@ -46,7 +46,7 @@ class Euro : public Currency {
         {
             float currentbalance=atof(this->balance.c_str());
             float rate;
-            float updatedbalance;
+            float updatedbalance=currentbalance;
             if(currency!="EUR") rate=fc.EuroToRate(currency);
             else rate=1;
             updatedbalance=currentbalance+value/rate;
@@ -57,7 +57,7 @@ class Euro : public Currency {
         {
             float currentbalance=atof(this->balance.c_str());
             float rate;
-            float updatedbalance;
+            float updatedbalance=currentbalance;
             if(currency!="EUR") rate=fc.EuroToRate(currency);
             else rate=1;
             if(currentbalance-value/rate>=0) updatedbalance=currentbalance-value/rate;
