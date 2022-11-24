@@ -32,7 +32,7 @@ class Euro : public Currency {
   // TODO: implement class
     private:
         std::string abbreviation="EUR";
-        std::string symbol="€";
+        std::string symbol="â‚¬";
         std::string balance="0";
         float dollarExchangeRate;
         FakeCantor fc;
