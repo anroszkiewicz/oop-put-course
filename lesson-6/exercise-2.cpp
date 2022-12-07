@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <stdexcept>
 
 using namespace std;
 
@@ -22,7 +23,8 @@ class Logarithm : public Number
         }
         double doubleValue()
         {
-            if(this->base<=0 || this->base==1 || this->argument<=0) throw(this->base);
+            if(this->base<=0 || this->base==1) throw invalid_argument("invalid base");
+            if(this->argument<=0) throw out_of_range("invalid argument");
 
             return log(this->argument)/log(this->base);
         }
@@ -37,10 +39,14 @@ int main()
         Logarithm myLogarithm(myBase,myArgument);
         cout<<myLogarithm.doubleValue();
     }
-    catch(double base)
+    catch(invalid_argument)
     {
         cout<<"Can't calculate logarithm."<<endl;
         cout<<"Base should be a positive number not equal to one."<<endl;
+    }
+    catch(out_of_range)
+    {
+        cout<<"Can't calculate logarithm."<<endl;
         cout<<"Argument should be a positive number."<<endl;
     }
 }
