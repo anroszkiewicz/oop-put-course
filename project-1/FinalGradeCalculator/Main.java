@@ -4,10 +4,14 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Student student1 = new Student("Anna","Roszkiewicz",1);
-        String testname=student1.FullName();
-        System.out.println(testname);
+        Student ania = new Student("Anna","Roszkiewicz",1);
+        Student tosica = new Student("Antonina","Pogorzelczyk",2);
+        Student wojtek = new Student("Wojciech","Hankiewicz",3);
 
-        Subject subject1 = new Subject("Math");
+        Student[] students = {ania,tosica,wojtek};  
+
+        Subject math = new Subject("Math",students);
+
+        math.StudentList();
     }
 }
