@@ -1,5 +1,4 @@
 package FinalGradeCalculator;
-import java.util.Arrays;
 
 public class Subject
 {
@@ -12,11 +11,16 @@ public class Subject
         this.students = students;
     }
 
-    void StudentList()
+    public void StudentList()
     {
-        for(Student s: this.students)
+        for(Student student: this.students)
         {
-            System.out.println(s.FullName());
+            System.out.println(student.FullName());
         }
+    }
+
+    public int classSize()
+    {
+        return this.students.length;
     }
 }

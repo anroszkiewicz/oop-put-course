@@ -12,4 +12,9 @@ public class SingleGrade
         this.student = inputStudent;
         this.value = inputValue;
     }
+
+    public double GradeValue()
+    {
+        return this.value;
+    }
 }
