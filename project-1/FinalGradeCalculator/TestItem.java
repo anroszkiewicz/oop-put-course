@@ -1,5 +1,6 @@
 package FinalGradeCalculator;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class TestItem 
 {
@@ -23,9 +24,9 @@ public class TestItem
         int classSize = currentSubject.students.length;
 
         SingleGrade newGrades[];
-        newGrades = new SingleGrade[20];
+        newGrades = new SingleGrade[3];
 
-        System.out.println("Please input grades for " + name + ": ");
+        System.out.println("Please input grades for " + this.subject.SubjectName() + " " + this.name + ": ");
 
         for(int i=0; i<classSize; i++)
         {
@@ -33,6 +34,8 @@ public class TestItem
             Double inputGradeValue = scanner.nextDouble();
             SingleGrade newGrade = new SingleGrade(this,currentSubject.students[i],inputGradeValue);
             newGrades[i] = newGrade;
+
+            currentSubject.students[i].grades.add(newGrade);
         }
 
         this.grades = newGrades;
@@ -51,15 +54,36 @@ public class TestItem
     public double TestAverage()
     {
         double sum=0;
+        double result=0;
 
-        for(int i=0; i<this.grades.length; i++) 
+        try
         {
-            double grade = this.grades[i].GradeValue();
-            sum+=grade;
+            for(int i=0; i<this.grades.length; i++) 
+            {
+                double grade = this.grades[i].GradeValue();
+                sum+=grade;
+            }
+            result=sum/grades.length;
         }
-        double result=sum/grades.length; //throw exception if grades is empty!
+        catch(NullPointerException e)
+        {
+            System.out.println("Zero grades - cannot calculate average");
+        }
         return result;
     }
 
-    
+    public String Name()
+    {
+        return this.name;
+    }
+
+    public Subject TestSubject()
+    {
+        return this.subject;
+    }
+
+    public int TestWeight()
+    {
+        return this.weight;
+    }
 }

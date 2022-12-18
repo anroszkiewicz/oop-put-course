@@ -13,8 +13,33 @@ public class SingleGrade
         this.value = inputValue;
     }
 
+    public void ChangeGrade(double newValue)
+    {
+        this.value = newValue;
+    }
+
     public double GradeValue()
     {
         return this.value;
+    }
+
+    public String StudentName()
+    {
+        return this.student.FullName();
+    }
+
+    public String TestName()
+    {
+        return this.test.Name();
+    }
+
+    public Subject Subject()
+    {
+        return this.test.TestSubject();
+    }
+
+    public int Weight()
+    {
+        return this.test.TestWeight();
     }
 }

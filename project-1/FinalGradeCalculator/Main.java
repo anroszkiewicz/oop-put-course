@@ -4,9 +4,9 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Student ania = new Student("Anna","Roszkiewicz",1);
-        Student tosica = new Student("Antonina","Pogorzelczyk",2);
-        Student wojtek = new Student("Wojciech","Hankiewicz",3);
+        Student ania = new Student("Anna","Roszkiewicz");
+        Student tosica = new Student("Antonina","Pogorzelczyk");
+        Student wojtek = new Student("Wojciech","Hankiewicz");
 
         Student[] students = {ania,tosica,wojtek};  
 
@@ -20,9 +20,22 @@ public class Main
         //math.StudentList();
 
         mathTest.AssignGrades();
-        mathTest.DisplayGrades();
+        //mathTest.DisplayGrades();
+        mathTest2.AssignGrades();
+        englishTest.AssignGrades();
 
         double result = mathTest.TestAverage();
-        System.out.print(result);
+        System.out.printf("%.2f\n",result);
+
+        wojtek.DisplayGrades();
+        double result2 = wojtek.SubjectAverage(math);
+        System.out.printf("%.2f\n",result2);
+
+        math.AssignFinalGrades();
+        english.AssignFinalGrades();
+
+        ania.DisplayFinalGrades();
+        double result3 = ania.FinalGradeAverage();
+        System.out.printf("%.2f\n",result3);
     }
 }
