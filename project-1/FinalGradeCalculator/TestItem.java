@@ -2,7 +2,7 @@ package FinalGradeCalculator;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class TestItem 
+public class TestItem implements Test
 {
     private String name;
     private Subject subject;

@@ -1,7 +1,7 @@
 package FinalGradeCalculator;
 import java.util.ArrayList;
 
-public class Student 
+public class Student implements Person
 {
     private String name,surname;
     ArrayList <SingleGrade> grades;

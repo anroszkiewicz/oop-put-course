@@ -1,6 +1,6 @@
 package FinalGradeCalculator;
 
-public class SingleGrade 
+public class SingleGrade implements Grade
 {
     private TestItem test;
     private Student student;

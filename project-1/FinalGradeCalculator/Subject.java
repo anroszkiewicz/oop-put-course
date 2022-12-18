@@ -1,6 +1,6 @@
 package FinalGradeCalculator;
 
-public class Subject
+public class Subject implements SchoolSubject
 {
     private String name;
     Student[] students;
