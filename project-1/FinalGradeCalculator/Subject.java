@@ -13,6 +13,7 @@ public class Subject
 
     public void StudentList()
     {
+        System.out.println("Showing student list for " + this.name);
         for(Student student: this.students)
         {
             System.out.println(student.FullName());

@@ -29,11 +29,13 @@ public class Student
         }
     }
 
-    public double SubjectAverage(Subject subject)
+    public double SubjectAverage(Subject subject) throws ArithmeticException
     {
         double gradeSum=0;
         double weightSum=0;
         double result=0;
+
+        if(grades.size()==0) throw new ArithmeticException("Zero grades - cannot calculate average");
 
         for(int i=0; i<this.grades.size(); i++)
         {
@@ -44,7 +46,6 @@ public class Student
             }
         }
         result = gradeSum/weightSum;
-
         return result;
     }
 
@@ -57,11 +58,28 @@ public class Student
         }
     }
 
-    public double FinalGradeAverage()
+    public double FinalGradeAverage() throws ArithmeticException
     {
         double sum=0;
+
+        if(finalGrades.size()==0) throw new ArithmeticException("Zero grades - cannot calculate average");
+
         for(double grade: this.finalGrades) sum+=grade;
         double result = sum/this.finalGrades.size();
         return result;
+    }
+
+    public void DisplayFinalGradeAverage()
+    {
+        try
+        {
+            double result = this.FinalGradeAverage();
+            System.out.print("Final grade average for " + this.FullName() + ": ");
+            System.out.printf("%.2f\n",result);
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println(e);
+        }
     }
 }
