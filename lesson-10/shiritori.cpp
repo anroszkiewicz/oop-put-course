@@ -66,12 +66,21 @@ class GameControl
             vector <string> words;
             Shiritori NewGame(words,0);
             bool gameOver=0;
+            bool wantToPlayAgain=1;
             string userInput;
-            while(!gameOver)
+            while(wantToPlayAgain)
             {
-                cin>>userInput;
-                NewGame.Play(userInput);
                 gameOver=NewGame.GameStatus();
+                while(!gameOver)
+                {
+                    cin>>userInput;
+                    NewGame.Play(userInput);
+                    gameOver=NewGame.GameStatus();
+                }
+                cout<<"Do you want to play again? [Y/N]"<<endl;
+                cin>>userInput;
+                if(userInput=="Y") NewGame.Restart();
+                else wantToPlayAgain=0;
             }
         }
 };
